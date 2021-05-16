@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 
 export default function index() {
   return (
@@ -16,7 +16,7 @@ export default function index() {
       <section>
         {/* this is how an image is done <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} /> */}
         <p>整体　筋膜リリース</p>
-        <h1>flamingo</h1>
+        <h1 className="cursive">flamingo</h1>
         <p>
           羽ばたきたくなる身体に… オールハンドで身体を気持ちよく整えます。
           心地よい身体になってあなただけの人生を 思いっきり楽しんでほしい…
@@ -27,3 +27,4 @@ export default function index() {
     </Layout>
   );
 }
+  
