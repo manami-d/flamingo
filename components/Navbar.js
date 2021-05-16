@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import {AiOutlineInstagram} from 'react-icons/ai'
+
 
 export default function Navbar() {
   return (
@@ -18,7 +20,7 @@ export default function Navbar() {
       </Link>
       <a href="https://www.instagram.com/flamingo.seitai.misa/?igshid=fb5c688pdmxe">
         Instagram
-        <i class="fab fa-instagram"></i>
+        <AiOutlineInstagram id="insta-icon" />
       </a>
     </nav>
   );

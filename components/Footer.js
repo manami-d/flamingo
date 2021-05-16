@@ -3,6 +3,6 @@ import Link from "next/link";
 
 export default function Footer() {
   return(
-    
+    <p>Footer</p>
   )
 }

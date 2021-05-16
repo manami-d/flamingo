@@ -1,24 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[Figma](https://www.figma.com/file/fiy0FDK8RYYqJnG1qTrA3c/Mi-chan) | [Trello](https://trello.com/b/crjZ41sx/web-app-tracker) 
+</br>
 
-## Getting Started
+---
+## Styling 
+---
 
-First, run the development server:
+**Global Styles**
 
-```bash
-npm run dev
-# or
-yarn dev
+chuck anything into ```styles/globals.scss``` 
+
+All colors etc. should be assigned in here, component styling should be limited to layout and responsiveness.
+
+</br>
+
+**Styling per Component/Page**
+
+you will need to either use JS inside the file (i.e. [styled components](https://styled-components.com/)) or 
+create an individual css file that must be a module.
+i.e. footerStyles.module.css
+
+</br>
+
+**Bootstrap**
+
+import the file into _app.js
+
+```js
+// pages/_app.js
+import 'bootstrap/dist/css/bootstrap.css'
+
+export default function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+```
+</br>
+
+---
+## Icons
+---
+
+React Icons has been imported into the Package and gives us access to a lot of common icons very easily.
+[React Icons](https://react-icons.github.io/react-icons)
+
+**How To**
+
+Step 1. import the icon into the file: 
+```js import {AiOutlineInstagram} from 'react-icons/ai' ```
+
+step 2. use it 
+```js <AiOutlineInstagram />```
+
+</br>
+
+---
+## Importing fonts/ StyleSheets
+---
+
+Put these inside pages/_document.js 
+
+```js
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
+  }
+
+  render() {
+    return (
+      <Html lang="ja">
+        <Head>
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet" />
+        </ Head>
+        <body>
+```
+</br>
+
+---
+## Environment Variables
+---
+
+Save these inside .env.local 
+example=thisIsASecret
+and reference them inside your code i.e.
+```js
+process.env.example
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[DOCS - loading-environment-variables](https://nextjs.org/docs/basic-features/environment-variables#loading-environment-variables)
+</br>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
+---
 ## Learn More
+---
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -27,7 +101,11 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+</br>
+
+---
+## Deployment
+---
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
