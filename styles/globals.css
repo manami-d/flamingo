@@ -14,3 +14,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+h1 {
+  font-family: Apple Chancery, "Homemade Apple", cursive;
+}
+
+p {
+  font-family: Bradley Hand, "Just Another Hand", cursive;
+}
