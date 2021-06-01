@@ -5,13 +5,15 @@ import Layout from '../components/layout';
 import styled from 'styled-components';
 import { page } from '../styles/GlobalStyled';
 import Card from '../components/Card';
+import Button from '../components/Button';
+import Link from 'next/link';
 
 const StyledIndex = styled(page)`
     .hero {
         height: 45vh;
         width: 100%;
         background: rgba(197, 197, 197, 0.774);
-        background-image: src('./public/topimage.jpg');
+        background-image: url('/topimage.jpg');
         display: flex;
         justify-content: center;
         align-items: center;
@@ -19,7 +21,10 @@ const StyledIndex = styled(page)`
             display: flex;
             flex-direction: column;
             max-width: 400px;
-            p {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 1.5rem;
+            p,
+            h1 {
                 text-align: center;
             }
         }
@@ -62,9 +67,30 @@ export default function index() {
                 </div>
 
                 <div className="card-wrapper">
-                    <Card />
-                    <Card />
-                    <Card />
+                    <Card link="/about" linkDesc="about">
+                        <p>当サロンについて。</p>
+                        <Button>
+                            <Link href="/about">
+                                <a>About</a>
+                            </Link>
+                        </Button>
+                    </Card>
+                    <Card>
+                        <p>メニューはこちらからご覧いただけます。</p>
+
+                        <a style={{ display: 'block', padding: 'auto', color: 'white' }} href="/flamingo-menu.pdf" download>
+                            <Button>Menu</Button>
+                        </a>
+                    </Card>
+                    <Card>
+                        {' '}
+                        <p>お問合わせはこちらから。</p>
+                        <Button>
+                            <Link href="/contact">
+                                <a>contact</a>
+                            </Link>
+                        </Button>
+                    </Card>
                 </div>
                 {/* <Image src="/feather.png" alt="" width={100} height={100} /> */}
             </StyledIndex>

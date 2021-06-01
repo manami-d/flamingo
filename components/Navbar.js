@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
-import { AiOutlineInstagram } from 'react-icons/ai';
+import { AiOutlineInstagram, AiOutlineMenu } from 'react-icons/ai';
 import styled from 'styled-components';
 
 const StyledNav = styled.nav`
@@ -12,32 +12,41 @@ const StyledNav = styled.nav`
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
-    box-shadow: 0px 3px 0 #9c9c9c;
+    box-shadow: 0px 3px 0 var(--primary-color);
     margin-bottom: 1rem;
     .logo {
-        width: 12.5rem;
-        height: 100%;
-        margin-left: 3rem;
+        width: 9.25rem;
+        height: 60%;
+        margin: auto 0 auto 3rem;
         // just until we have a logo to display
-        color: white;
-        background: black;
+        background-image: url('/brown-swatch50px.png');
         text-align: center;
-        line-height: 7vh;
+        font-size: 1.5rem;
+        line-height: 4vh;
+        color: white;
     }
     ul {
         /* margin-top: 7vh; */
         display: flex;
         flex-direction: column;
         list-style: none;
-        border: 1px solid black;
-        padding-right: 4rem;
 
+        padding-right: 4rem;
+        li {
+            margin: 5px;
+            *:hover {
+                border-bottom: 1px solid var(--primary-color);
+            }
+        }
         .hamburger {
+            margin-top: calc((7vh - 60px) / 2);
             display: block;
             line-height: 20px;
-            height: 20px;
-            width: 15px;
-            background: red;
+            height: 60px;
+            width: 60px;
+            background: none;
+            border: 1px solid #525050;
+            border-radius: 7px;
         }
         .closed {
             position: absolute;
@@ -47,8 +56,11 @@ const StyledNav = styled.nav`
         }
         .open {
             position: absolute;
-            margin-top: 20px;
+            margin-top: calc(7vh + 2px);
             animation: menu 0.3s forwards;
+            background: white;
+            padding: 1rem;
+            box-shadow: 2px 2px 0 #9c9c9c;
         }
         @keyframes menu {
             from {
@@ -71,12 +83,11 @@ export default function Navbar() {
     };
     return (
         <StyledNav>
-            <i className="logo">LOGO</i>
+            <i className="logo cursive">flamingo</i>
             <ul>
                 <li>
                     <button className="hamburger" onClick={() => handleNav()}>
-                        {' '}
-                        +=+
+                        <AiOutlineMenu />
                     </button>
                 </li>
                 <div ref={navList} className="closed">
@@ -93,10 +104,9 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        {' '}
-                        <Link href="/menu">
-                            <a>Menu</a>
-                        </Link>
+                        <a href="/flamingo-menu.pdf" download>
+                            Menu
+                        </a>
                     </li>
                     <li>
                         {' '}

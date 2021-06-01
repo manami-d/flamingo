@@ -1,16 +1,14 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
-import Layout from '../components/layout';
 import styled from 'styled-components';
-import Button from './Button';
 
 const StyledCard = styled.article`
     height: 20vh;
-    max-height: 500px;
+    max-height: 550px;
     min-height: 200px;
-    width: 300px;
-
+    min-width: 280px;
+    width: 80vw;
+    max-width: 600px;
+    margin: 1rem auto;
     background: rgba(255, 255, 255, 0.6);
     box-shadow: 3px 3px 6px #d3d3d3, -3px -3px 6px #ededed;
 
@@ -22,17 +20,19 @@ const StyledCard = styled.article`
     border-radius: 17px;
     p {
         width: 80%;
-        margin: 0 auto;
+        margin: 1rem auto;
+        text-align: center;
+        line-height: 2.4rem;
+        font-size: 1.5rem;
+    }
+    @media only screen and (min-width: 880px) {
+        max-width: 400px;
+        margin: 1rem 5rem;
+    }
+    @media only screen and (min-width: 1000px) {
     }
 `;
 
-export default function Card() {
-    return (
-        <StyledCard>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae tempore, velit corporis sit laborum provident? Voluptas vero sunt possimus culpa?</p>
-            <Button>
-                <Link href="#">word</Link>
-            </Button>
-        </StyledCard>
-    );
+export default function Card({ children }) {
+    return <StyledCard>{children}</StyledCard>;
 }

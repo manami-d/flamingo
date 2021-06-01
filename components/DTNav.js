@@ -10,22 +10,24 @@ const StyledNav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 3px 0 #9c9c9c;
+    box-shadow: 0px 3px 0 var(--primary-color);
     margin-bottom: 1rem;
     .logo {
-        width: 12.5rem;
-        height: 100%;
-        margin-left: 3rem;
+        width: 9.3rem;
+        height: 60%;
+        /* margin-left: 3rem; */
+        margin: auto 0 auto 3rem;
         // just until we have a logo to display
         color: white;
-        background: black;
+        /* background: grey; */
+        background-image: url('/brown-swatch50px.png');
         text-align: center;
-        line-height: 7vh;
+        font-size: 1.5rem;
+        line-height: 4vh;
     }
     ul {
         width: 70vw;
         height: 100%;
-        border: 1px solid red;
         margin-left: auto;
         margin-right: 3rem;
         list-style: none;
@@ -38,7 +40,7 @@ const StyledNav = styled.nav`
 export default function Navbar() {
     return (
         <StyledNav>
-            <p className="logo">LOGO</p>
+            <i className="logo cursive">flamingo</i>
             <ul>
                 <li>
                     {' '}
@@ -54,9 +56,9 @@ export default function Navbar() {
                 </li>
                 <li>
                     {' '}
-                    <Link href="/menu">
-                        <a>Menu</a>
-                    </Link>
+                    <a href="/flamingo-menu.pdf" download>
+                        Menu
+                    </a>
                 </li>
                 <li>
                     {' '}
