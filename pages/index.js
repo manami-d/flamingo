@@ -3,13 +3,10 @@ import Image from 'next/image';
 import React from 'react';
 import Layout from '../components/layout';
 import styled from 'styled-components';
+import { page } from '../styles/GlobalStyled';
 import Card from '../components/Card';
 
-const StyledIndex = styled.div`
-    min-height: 90vh;
-    width: 100vw;
-    max-width: 1480px;
-
+const StyledIndex = styled(page)`
     .hero {
         height: 45vh;
         width: 100%;

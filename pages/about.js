@@ -2,20 +2,15 @@ import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
 import Layout from '../components/layout';
+import { page } from '../styles/GlobalStyled';
 import styled from 'styled-components';
 
-const StyledAbout = styled.div`
-    /* box-sizing: border-box; */
-    min-height: 90vh;
-    width: 100vw;
-    max-width: 1480px;
-    min-width: 300px;
+const StyledAbout = styled(page)`
     text-align: center;
-
     .about-wrapper {
         display: flex;
         flex-wrap: wrap;
-        height: 80vh;
+        /* height: 80vh; */
         margin: 1rem auto;
 
         article {
@@ -32,8 +27,12 @@ const StyledAbout = styled.div`
                 margin: 0 auto;
                 padding: 0;
                 /* width: 25vw; */
-                object-fit: contain;
-                background: grey;
+                img {
+                    object-fit: contain;
+                    height: 30vh;
+                    min-height: 400px;
+                }
+                /* background: grey; */
             }
             .about-content {
                 display: flex;
@@ -49,7 +48,9 @@ const StyledAbout = styled.div`
                     /* font-size: 2rem; */
                 }
                 p {
-                    margin: 1rem auto;
+                    /* line-height: 1.4rem; */
+                    text-align: left;
+                    margin: 1rem 2.5rem;
                     min-width: 280px;
                 }
             }
@@ -80,13 +81,15 @@ export default function about() {
                 <div className="about-wrapper">
                     <article>
                         <div className="about-image">
-                            <Image src="/salon1.jpg" alt="Salon room" width={500} height={500} loading="lazy" />
+                            <Image src="/salon1.jpg" alt="Salon room" width={500} height={400} loading="lazy" />
                         </div>
                         <div className="about-content">
                             <h2>当サロンについて</h2>
                             <p>
                                 当サロンでは筋膜リリースという手技を取り入れ、オールハンドでそれぞれのお身体に合わせたコースとご提供いたします。
+                                <br />
                                 凝り固まった筋肉にアプローチをし、その場限りでない施術をお届けします。
+                                <br />
                                 自宅の一室で行う完全プライベートサロンです。たくさんお話をしていただくのも、ゆっくりお休みなっていただくのも大歓迎です。
                             </p>
                         </div>
@@ -96,10 +99,17 @@ export default function about() {
                             <h2>セラピストについて</h2>
                             <p>
                                 私自身が激務な毎日で苦しさを経験したからこそ、おひとりおひとりの身体と心に丁寧に向き合います。
-                                あなたの毎日を快適にしたい、好きをずっと大好きでいたれるよう、まずは身体を整えましょう。 心と身体は密接につながっています。
-                                筋膜にアプローチをすることで筋肉のこわばりをほぐし、いっぱい頑張っているあなたの身体を褒めて整える手助けをさせてください。 身体の声を聴く。
+                                <br />
+                                あなたの毎日を快適にしたい、好きをずっと大好きでいたれるよう、まずは身体を整えましょう。
+                                <br /> 心と身体は密接につながっています。
+                                <br />
+                                筋膜にアプローチをすることで筋肉のこわばりをほぐし、いっぱい頑張っているあなたの身体を褒めて整える手助けをさせてください。
+                                <br /> 身体の声を聴く。
+                                <br />
                                 日々忙しく過ごされている中で、たまに訪れる不調の悲鳴を感じたことはありますか？ 私は、家事仕事ワンオペ育児によって身体を壊した経験があります。
-                                だからこそあなたに同じ思いをしてほしくない。 身体の声を聴いて、やわらげて、楽を手に入れる。 私にそのお手伝いをさせてください。
+                                <br />
+                                だからこそあなたに同じ思いをしてほしくない。
+                                <br /> 身体の声を聴いて、やわらげて、楽を手に入れる。 私にそのお手伝いをさせてください。
                             </p>
                         </div>
                         <div className="about-image">

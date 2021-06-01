@@ -3,17 +3,15 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import Layout from '../components/layout';
 import Button from '../components/Button';
+import { page } from '../styles/GlobalStyled';
 import styled from 'styled-components';
 
-const StyledContact = styled.div`
-    height: 90vh;
-    width: 100vw;
-    max-width: 1480px;
-    min-width: 300px;
+const StyledContact = styled(page)`
     .contact-form {
         /* height: 750px; */
         margin: 2.5rem auto;
         fieldset {
+            margin: 0 auto;
             min-height: 400px;
             height: 75vh;
             max-width: 500px;
@@ -22,7 +20,7 @@ const StyledContact = styled.div`
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
-            box-shadow: 3px 3px 6px #d3d3d3, -3px -3px 6px #ededed;
+
             border: none;
             legend {
                 h1 {
@@ -35,41 +33,42 @@ const StyledContact = styled.div`
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
-                margin: 2rem 0;
+                margin: 2rem auto;
                 min-width: 275px;
-
-                label {
-                    display: block;
-                    min-width: 75px;
-                    max-width: 125px;
-                    margin: 0 auto;
-                    text-align: center;
-                    /* margin-right: auto; */
-                }
-                input {
-                    padding: 0 7px;
-                    min-width: 240px;
-                    max-width: 400px;
-                    height: 2rem;
-                    margin: 0 auto;
-                    border-radius: 7px;
-                    &:focus-within {
-                        border: 1px solid pink;
-                        background: #d4d4d4;
+                &:focus-within {
+                    #form-message,
+                    label {
+                        color: #54a7b3;
                     }
                 }
+            }
+
+            label {
+                display: block;
+                min-width: 75px;
+                max-width: 125px;
+                margin-right: 1rem;
+                text-align: left;
+                /* margin-right: auto; */
+            }
+            input {
+                padding: 0 7px;
+                height: 2rem;
+                margin: 0 auto;
             }
             #form-message {
                 padding: 13px;
                 height: 10rem;
+            }
+            #form-message,
+            input {
+                /* border-width: 2px; */
                 min-width: 240px;
                 max-width: 400px;
                 margin: 0 auto;
+                border: none;
                 border-radius: 7px;
-                &:focus-within {
-                    border: 1px solid pink;
-                    background: #d4d4d4;
-                }
+                box-shadow: 2px 2px 4px #b3afaf, -2px -2px 4px #b3afaf;
             }
         }
     }

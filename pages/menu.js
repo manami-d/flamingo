@@ -2,13 +2,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
 import Layout from '../components/layout';
+import { page } from '../styles/GlobalStyled';
 import styled from 'styled-components';
 
-const StyledMenu = styled.div`
-    height: 90vh;
-    width: 100vw;
-    max-width: 1480px;
-`;
+const StyledMenu = styled(page)``;
 
 export default function menu() {
     return (
