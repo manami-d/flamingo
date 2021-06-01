@@ -11,6 +11,7 @@ const StyledIndex = styled(page)`
         height: 45vh;
         width: 100%;
         background: rgba(197, 197, 197, 0.774);
+        background-image: src('./public/topimage.jpg');
         display: flex;
         justify-content: center;
         align-items: center;
@@ -50,7 +51,7 @@ export default function index() {
                 <div className="hero">
                     <div className="hero-content">
                         <p>整体　筋膜リリース</p>
-                        <h1 className="cursive">Flamingo</h1>
+                        <h1 className="cursive">flamingo</h1>
                         <p>
                             羽ばたきたくなる身体に… <br />
                             オールハンドで身体を気持ちよく整えます。

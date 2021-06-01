@@ -18,6 +18,7 @@ export default function menu() {
             </Head>
             <StyledMenu>
                 <h1>Menu Page</h1>
+                <img src="menu.pdf" alt="flamingo menu" />
             </StyledMenu>
         </Layout>
     );

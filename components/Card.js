@@ -31,7 +31,7 @@ export default function Card() {
         <StyledCard>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae tempore, velit corporis sit laborum provident? Voluptas vero sunt possimus culpa?</p>
             <Button>
-                <Link href="#">word </Link>
+                <Link href="#">word</Link>
             </Button>
         </StyledCard>
     );

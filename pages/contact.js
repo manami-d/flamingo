@@ -126,7 +126,7 @@ export default function contact() {
                             <h1>Contact Me</h1>
                         </legend>
                         <div className="label-wrapper">
-                            <label htmlFor="name"> Name</label>
+                            <label htmlFor="name">お名前</label>
                             <input
                                 name="name"
                                 type="text"
@@ -137,7 +137,7 @@ export default function contact() {
                             />
                         </div>
                         <div className="label-wrapper">
-                            <label htmlFor="email"> Email</label>
+                            <label htmlFor="email">メールアドレス</label>
                             <input
                                 name="email"
                                 id="form-email"
@@ -150,7 +150,7 @@ export default function contact() {
                             />
                         </div>
                         <div className="label-wrapper">
-                            <label htmlFor="message"> Message</label>
+                            <label htmlFor="message">お問い合わせ内容</label>
                             <textarea
                                 required
                                 name="message"
@@ -161,7 +161,7 @@ export default function contact() {
                                 }}
                             />
                         </div>
-                        <Button type="submit">Submit</Button>
+                        <Button type="submit">送信</Button>
                     </fieldset>
                 </form>
             </StyledContact>

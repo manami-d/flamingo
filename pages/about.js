@@ -77,7 +77,7 @@ export default function about() {
                 <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet" />
             </Head>
             <StyledAbout>
-                <h1>About Flamingo</h1>
+                <h1>About flamingo</h1>
                 <div className="about-wrapper">
                     <article>
                         <div className="about-image">

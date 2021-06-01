@@ -8,6 +8,8 @@ const StyledlayoutDiv = styled.div`
     min-height: 100vh;
     width: 100vw;
     max-width: var(--max-width);
+    min-width: var(--min-width);
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
