@@ -4,8 +4,9 @@ import Layout from '../components/layout';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-    width: 80px;
-    height: 45px;
+    width: 100px;
+    height: 65px;
+    font-size: 1.2rem;
     border-radius: 7px;
     background: var(--button);
     border: none;
@@ -13,7 +14,8 @@ const StyledButton = styled.button`
     margin: 0 auto;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #ffffff;
+    border: 3px solid var(--button-border);
     a {
         display: block;
         padding: auto;
@@ -21,7 +23,12 @@ const StyledButton = styled.button`
     }
     &:hover,
     &:focus {
-        background: var(--button-active);
+        color: #50B1A9;
+        background: #ffffff;
+    }
+    @media only screen and (min-width: 880px) {
+        width: 80px;
+        height: 45px;
     }
 `;
 
