@@ -26,10 +26,12 @@ const StyledCard = styled.article`
         font-size: 1.5rem;
     }
     @media only screen and (min-width: 880px) {
-        max-width: 400px;
-        margin: 1rem 5rem;
+        max-width: 280px;
+        margin: 1rem auto;
     }
     @media only screen and (min-width: 1000px) {
+        max-width: 330px;
+        margin: 1rem auto;
     }
 `;
 
