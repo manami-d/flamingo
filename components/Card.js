@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledCard = styled.article`
-    height: 20vh;
+    height: 25vh;
     max-height: 550px;
     min-height: 200px;
     min-width: 280px;
