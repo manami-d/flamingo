@@ -130,7 +130,7 @@ export default function contact() {
                 <form className="contact-form" onSubmit={(e) => handleSubmit(e)}>
                     <fieldset>
                         <legend>
-                            <h1>Contact Me</h1>
+                            <h1>お問い合わせフォーム</h1>
                         </legend>
                         <div className="label-wrapper">
                             <label htmlFor="name">お名前</label>

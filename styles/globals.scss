@@ -1,3 +1,8 @@
+@font-face {
+    font-family: MoonTime;
+    src: url("/MoonTime-Regular.woff") format("woff");
+}
+
 :root {
     --bg-color: white;
     --nav-bg: white;
@@ -12,6 +17,7 @@
     --outline: orange;
     --max-width: 1480px;
     --min-width: 300px;
+    font-family: 'Hachi Maru Pop', cursive;
 
     // @media (prefers-color-scheme: dark) {
     //   --bg-color: black;
@@ -26,7 +32,8 @@
     width: 100%;
     box-sizing: border-box;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    
+    
     background: rgba(241, 241, 241, 0.37);
     color: var(--font-color);
     nav{
@@ -74,7 +81,8 @@ body  {
 // }
 
 .cursive {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'MoonTime';
+    letter-spacing: 2px;
 }
 
 a {

@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-    width: 75px;
+    width: 90px;
     height: 50px;
     font-size: 1rem;
     border-radius: 7px;
@@ -12,10 +12,12 @@ const StyledButton = styled.button`
     border: none;
     display: flex;
     margin: 0 auto;
+    padding: 0 15px;
     justify-content: center;
     align-items: center;
     color: #ffffff;
     border: 2px solid var(--button-border);
+    font-family: 'Hachi Maru Pop', cursive;
     a {
         display: block;
         padding: auto;
@@ -25,10 +27,6 @@ const StyledButton = styled.button`
     &:focus {
         color: #50b1a9;
         background: #ffffff;
-    }
-    @media only screen and (min-width: 880px) {
-        width: 80px;
-        height: 45px;
     }
 `;
 

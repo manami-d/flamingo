@@ -8,7 +8,7 @@ const StyledNav = styled.nav`
     min-width: var(--min-width);
     max-width: var(--max-width);
     height: 7vh;
-    min-height: 20px;
+    min-height: 60px;
     display: flex;
     justify-content: space-between;
     border-bottom: 3px solid var(--primary-color);

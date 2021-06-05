@@ -45,18 +45,45 @@ const StyledIndex = styled(page)`
 
         .inner-wrapper {
             display: flex;
-
+            position: relative;
+            color: white;
             width: 100%;
             height: 100%;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgb(0 0 0 / 50%);
+                /* z-index: 5; */
+            }
+            p,
+            button,
+            .button-link {
+                z-index: 5;
+            }
+            &:hover {
+                color: black;
+                &:after {
+                    background: none;
+                }
+                p {
+                    background: rgba(116, 112, 112, 0.45);
+                }
+            }
             .card-content {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                /* align-content: center; */
                 width: 100%;
+                background-size: cover;
                 background-position: left center;
                 background-repeat: no-repeat;
-                background-image: url('/topimage.jpg');
+                p {
+                    width: 90%;
+                }
                 .button-link {
                     display: block;
                     padding: auto;
@@ -64,29 +91,53 @@ const StyledIndex = styled(page)`
                     margin-bottom: 16px !important;
                 }
             }
+            #card1 {
+                background-image: url('/lady2.jpg') !important;
+            }
+            #card2 {
+                background-image: url('/footbath.jpg') !important;
+            }
+            #card3 {
+                background-image: url('/salon3.jpg') !important;
+            }
             .card-image {
                 display: none;
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
                 img {
+                    border-radius: 7px;
                     height: 100%;
                     width: 100%;
                 }
             }
         }
     }
-    /*
-    card-image
-1. about - lady2
-2. menu - footbath
-3. contact - salon3
-    */
+
     @media only screen and (min-width: 400px) {
-        .inner-wrapper {
-            .card-content {
-                background: white;
-                background-image: none !important;
+        .card-wrapper {
+            .inner-wrapper {
+                color: black;
+                &:after {
+                    content: none;
+                }
+                &:hover {
+                    &:after {
+                        background: none;
+                    }
+                    p {
+                        background: inherit;
+                    }
+                }
+                .card-content {
+                    background: white;
+                }
+
+                #card1,
+                #card2,
+                #card3 {
+                    background-image: none !important;
+                }
             }
             .card-image {
                 display: block !important;
@@ -94,10 +145,46 @@ const StyledIndex = styled(page)`
         }
     }
     @media only screen and (min-width: 880px) {
-        .inner-wrapper {
-            .card-content {
-                background: none;
-                background-image: url('/topimage.jpg') !important;
+        .card-wrapper {
+            .inner-wrapper {
+                position: relative;
+                color: white;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgb(0 0 0 / 50%);
+                    /* z-index: 5; */
+                }
+                p,
+                button,
+                .button-link {
+                    z-index: 5;
+                }
+                &:hover {
+                    color: black;
+                    &:after {
+                        background: none;
+                    }
+                    p {
+                        background: rgba(116, 112, 112, 0.45);
+                    }
+                }
+                .card-content {
+                    /* background: none !important; */
+                }
+                #card1 {
+                    background-image: url('/lady2.jpg') !important;
+                }
+                #card2 {
+                    background-image: url('/footbath.jpg') !important;
+                }
+                #card3 {
+                    background-image: url('/salon3.jpg') !important;
+                }
             }
             .card-image {
                 display: none !important;
@@ -105,10 +192,29 @@ const StyledIndex = styled(page)`
         }
     }
     @media only screen and (min-width: 1000px) {
-        .inner-wrapper {
-            .card-content {
-                background: white;
-                background-image: none !important;
+        .card-wrapper {
+            .inner-wrapper {
+                color: black;
+                &:after {
+                    content: none;
+                }
+                &:hover {
+                    &:after {
+                        background: none;
+                    }
+                    p {
+                        background: inherit;
+                    }
+                }
+                .card-content {
+                    background: white;
+                }
+
+                #card1,
+                #card2,
+                #card3 {
+                    background-image: none !important;
+                }
             }
             .card-image {
                 display: block !important;
@@ -147,10 +253,10 @@ export default function index() {
                     <Card link="/about" linkDesc="about">
                         <div className="inner-wrapper">
                             <div className="card-image">
-                                <img src="/lady2.jpg" alt="#" />
+                                <img src="/lady2.jpg" alt="an image of a lady preparing for massage" />
                             </div>
-                            <div className="card-content">
-                                <p>当サロンについて。</p>
+                            <div className="card-content" id="card1">
+                                <p>当サロンflamingoについて。</p>
                                 <a className="button-link" href="/about">
                                     <Button>About</Button>
                                 </a>
@@ -160,10 +266,10 @@ export default function index() {
                     <Card>
                         <div className="inner-wrapper">
                             <div className="card-image">
-                                <img src="/footbath.jpg" alt="#" />
+                                <img src="/footbath.jpg" alt="an image of a footbath with feet present " />
                             </div>
-                            <div className="card-content">
-                                <p>メニューはこちらからご覧いただけます</p>
+                            <div className="card-content" id="card2">
+                                <p>メニューはこちらからご覧いただけます。</p>
 
                                 <a className="button-link" href="/flamingo-menu.pdf" download>
                                     <Button>Menu</Button>
@@ -174,12 +280,12 @@ export default function index() {
                     <Card>
                         <div className="inner-wrapper">
                             <div className="card-image">
-                                <img src="/salon3.jpg" alt="#" />
+                                <img src="/salon3.jpg" alt="Image of the Salon that the massages will be done in" />
                             </div>
-                            <div className="card-content">
-                                <p>お問合わせはこちらから。</p>
+                            <div className="card-content" id="card3">
+                                <p>お問合わせはこちら。</p>
                                 <a className="button-link" href="/contact">
-                                    <Button>contact</Button>
+                                    <Button>Contact</Button>
                                 </a>
                             </div>
                         </div>

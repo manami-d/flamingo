@@ -51,7 +51,7 @@ const StyledAbout = styled(page)`
                 padding: 5px;
                 h2 {
                     text-align: center;
-                    /* font-size: 2rem; */
+                    font-size: 2rem;
                 }
                 p {
                     /* line-height: 1.4rem; */
@@ -63,18 +63,24 @@ const StyledAbout = styled(page)`
         }
     }
     @media only screen and (min-width: 500px) {
-        padding-bottom: 150px;
+        /* padding-bottom: 150px; */
         article {
+            .p-wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 350px;
+            }
             /* flex-direction: row; */
             position: relative;
-            height: 75vh;
+            min-height: 100vh;
             width: 90vw !important;
             max-width: 1200px !important;
             margin: 5px auto !important;
             align-items: center;
             .about-content {
                 position: absolute;
-                bottom: -150px;
+                bottom: 3.5rem;
                 /* right: 0; */
                 width: 90vw !important;
                 max-width: 800px;
@@ -117,7 +123,7 @@ export default function about() {
                 <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet" />
             </Head>
             <StyledAbout>
-                <h1>About flamingo</h1>
+                <h1>flamingoについて</h1>
                 <div className="about-wrapper">
                     <article>
                         <div id="about-image1">
@@ -125,9 +131,17 @@ export default function about() {
                         </div>
                         <div className="about-content">
                             <h2>当サロンについて</h2>
-                            <p>当サロンでは筋膜リリースという手技を取り入れ、オールハンドでそれぞれのお身体に合わせたコースとご提供いたします。</p>
-                            <p>凝り固まった筋肉にアプローチをし、その場限りでない施術をお届けします。</p>
-                            <p>自宅の一室で行う完全プライベートサロンです。たくさんお話をしていただくのも、ゆっくりお休みなっていただくのも大歓迎です。</p>
+                            <div className="p-wrapper">
+                                <p>身体の声を聞く。</p>
+                                <p>日々忙しく過ごされている中で、たまに訪れる身体からの不調のサインを感じたことはありませんか？</p>
+                                <p>
+                                    私は仕事に家事に育児に追われ、派手に身体を壊した経験があります。まぁ苦しい…しんどい…誰か助けて。
+                                    そんな状態になりました。だからこそ、頑張るあなたに同じ思いはして欲しくない。自分の声を聞いて、和らげて、楽を手に入れましょう！
+                                    激務な毎日で苦しさを体験したからこそ、お一人お一人の身体に心に向き合います。
+                                </p>
+                                <p>筋膜リリースという手技で筋膜にアプローチをしてから筋肉のこわばりをほぐし整えていきます。小難しいことは言いません。ふわっふわな身体と心にするお手伝いをします。</p>
+                                <p>そして、身体が楽になった先に何をしたいですか？一緒に目指していきましょう。</p>
+                            </div>
                         </div>
                     </article>
                     <article>
@@ -136,15 +150,20 @@ export default function about() {
                             <img src="/misato.jpg" alt="Salon room" loading="lazy" />
                         </div>
                         <div className="about-content">
-                            <h2>セラピストについて</h2>
-                            <p> 私自身が激務な毎日で苦しさを経験したからこそ、おひとりおひとりの身体と心に丁寧に向き合います。 </p>
-                            <p> あなたの毎日を快適にしたい、好きをずっと大好きでいたれるよう、まずは身体を整えましょう。 </p>
-                            <p> 心と身体は密接につながっています。 </p>
-                            <p> 筋膜にアプローチをすることで筋肉のこわばりをほぐし、いっぱい頑張っているあなたの身体を褒めて整える手助けをさせてください。 </p>
-                            <p> 身体の声を聴く。 </p>
-                            <p> 日々忙しく過ごされている中で、たまに訪れる不調の悲鳴を感じたことはありますか？ 私は、家事仕事ワンオペ育児によって身体を壊した経験があります。 </p>
-                            <p> だからこそあなたに同じ思いをしてほしくない。 </p>
-                            <p>身体の声を聴いて、やわらげて、楽を手に入れる。 私にそのお手伝いをさせてください。</p>
+                            <h2>セラピスト 江添美里</h2>
+                            <div className="p-wrapper">
+                                <p> 3児のママでもあるセラピストの江添美里です。以前は長く営業職をしていました。</p>
+                                <p>
+                                    心子育てをしながらの激務に身体も心もなんならお肌も不調続きの日々でした。それでも好きだった営業のお仕事…全てに全力投球の末、結果かなり疲労が表に出ました。本当に色んな意味で暗黒時代です。何をやっても必死で、結果なんて付いて来ず。
+                                </p>
+                                <p>
+                                    そんな疲れ度MAXな中、ふと我が子が通う保育園で全力で笑う子どもたちと職員さんの姿が目には入りました。本気で楽しんでいる…私もコレがしたい！迷わずセラピストへ転身しました！
+                                </p>
+                                <p>
+                                    皆が喜んで、幸せを感じられる、誰かのお手伝いができる、私と会えてよかったと思ってもらえる、大好きを本気でやれる自分になりたい。そんな一心で３つのスクールに通い、２社でセラピストを経験しました。
+                                </p>
+                                <p> あなたの毎日を快適にしたい、好きをずっと大好きでいたれるよう、まずは身体を整えましょう。 </p>
+                            </div>
                         </div>
                     </article>
                 </div>

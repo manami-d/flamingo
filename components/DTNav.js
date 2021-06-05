@@ -7,6 +7,7 @@ const StyledNav = styled.nav`
     width: 100vw;
     max-width: 1480px;
     height: 7vh;
+    min-height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
