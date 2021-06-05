@@ -41,6 +41,80 @@ const StyledIndex = styled(page)`
         flex-wrap: wrap;
         width: 100%;
         height: auto;
+
+        .inner-wrapper {
+            display: flex;
+
+            width: 100%;
+            height: 100%;
+            .card-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                /* align-content: center; */
+                width: 100%;
+                background-position: left center;
+                background-repeat: no-repeat;
+                background-image: url('/topimage.jpg');
+                .button-link {
+                    display: block;
+                    padding: auto;
+                    color: white;
+                    margin-bottom: 16px !important;
+                }
+            }
+            .card-image {
+                display: none;
+                height: 100%;
+                width: 100%;
+                background: red;
+
+                object-fit: cover;
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    /*
+    card-image
+1. about - lady2
+2. menu - footbath
+3. contact - salon3
+    */
+    @media only screen and (min-width: 400px) {
+        .inner-wrapper {
+            .card-content {
+                background: white;
+                background-image: none !important;
+            }
+            .card-image {
+                display: block !important;
+            }
+        }
+    }
+    @media only screen and (min-width: 880px) {
+        .inner-wrapper {
+            .card-content {
+                background: none;
+                background-image: url('/topimage.jpg') !important;
+            }
+            .card-image {
+                display: none !important;
+            }
+        }
+    }
+    @media only screen and (min-width: 1000px) {
+        .inner-wrapper {
+            .card-content {
+                background: white;
+                background-image: none !important;
+            }
+            .card-image {
+                display: block !important;
+            }
+        }
     }
 `;
 
@@ -72,28 +146,44 @@ export default function index() {
 
                 <div className="card-wrapper">
                     <Card link="/about" linkDesc="about">
-                        <p>当サロンについて。</p>
-                        <Button>
-                            <Link href="/about">
-                                <a>About</a>
-                            </Link>
-                        </Button>
+                        <div className="inner-wrapper">
+                            <div className="card-image">
+                                <img src="/lady2.jpg" alt="#" />
+                            </div>
+                            <div className="card-content">
+                                <p>当サロンについて。</p>
+                                <a className="button-link" href="/about">
+                                    <Button>About</Button>
+                                </a>
+                            </div>
+                        </div>
                     </Card>
                     <Card>
-                        <p>メニューはこちらからご覧いただけます。</p>
+                        <div className="inner-wrapper">
+                            <div className="card-image">
+                                <img src="/footbath.jpg" alt="#" />
+                            </div>
+                            <div className="card-content">
+                                <p>メニューはこちらからご覧いただけます。</p>
 
-                        <a style={{ display: 'block', padding: 'auto', color: 'white' }} href="/flamingo-menu.pdf" download>
-                            <Button>Menu</Button>
-                        </a>
+                                <a className="button-link" href="/flamingo-menu.pdf" download>
+                                    <Button>Menu</Button>
+                                </a>
+                            </div>
+                        </div>
                     </Card>
                     <Card>
-                        {' '}
-                        <p>お問合わせはこちらから。</p>
-                        <Button>
-                            <Link href="/contact">
-                                <a>contact</a>
-                            </Link>
-                        </Button>
+                        <div className="inner-wrapper">
+                            <div className="card-image">
+                                <img src="/salon3.jpg" alt="#" />
+                            </div>
+                            <div className="card-content">
+                                <p>お問合わせはこちらから。</p>
+                                <a className="button-link" href="/contact">
+                                    <Button>contact</Button>
+                                </a>
+                            </div>
+                        </div>
                     </Card>
                 </div>
                 {/* <Image src="/feather.png" alt="" width={100} height={100} /> */}

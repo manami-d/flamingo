@@ -30,10 +30,12 @@ const StyledAbout = styled(page)`
 
                 img {
                     object-fit: cover;
-                    height: 75vh;
+                    height: 35vh;
                     width: 90vw;
+                    min-width: 280px;
+                    max-width: 700px;
                     min-height: 300px;
-                    min-width: 300px;
+                    max-height: 500px;
                 }
                 /* background: grey; */
             }
@@ -43,7 +45,8 @@ const StyledAbout = styled(page)`
                 justify-content: flex-start;
                 width: 90vw;
                 min-height: 400px;
-                min-width: 300px;
+                min-width: 280px;
+                max-width: 700px;
                 height: auto;
                 margin: 0 2rem;
                 background: var(--primary-opaque);
@@ -108,6 +111,7 @@ export default function about() {
                     </article>
                     <article>
                         <div className="about-image">
+                            {/* michan photo */}
                             <img src="/salon1.jpg" alt="Salon room" loading="lazy" />
                         </div>
                         <div className="about-content">

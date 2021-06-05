@@ -4,9 +4,9 @@ import Layout from '../components/layout';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-    width: 100px;
-    height: 65px;
-    font-size: 1.2rem;
+    width: 75px;
+    height: 50px;
+    font-size: 1rem;
     border-radius: 7px;
     background: var(--button);
     border: none;
@@ -23,7 +23,7 @@ const StyledButton = styled.button`
     }
     &:hover,
     &:focus {
-        color: #50B1A9;
+        color: #50b1a9;
         background: #ffffff;
     }
     @media only screen and (min-width: 880px) {

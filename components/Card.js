@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledCard = styled.article`
-    height: 20vh;
+    overflow: hidden;
+    height: 30vh;
     max-height: 550px;
     min-height: 200px;
     min-width: 280px;
@@ -23,10 +24,14 @@ const StyledCard = styled.article`
         width: 80%;
         margin: 1rem auto;
         text-align: center;
-        line-height: 2.4rem;
-        font-size: 1.2rem;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+    @media only screen and (min-width: 400px) {
+        height: 25vh;
     }
     @media only screen and (min-width: 880px) {
+        height: 30vh;
         width: 30%;
         min-width: 280px;
         max-width: 320px;

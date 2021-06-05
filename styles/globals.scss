@@ -1,5 +1,6 @@
 :root {
-    --bg-color: white;
+    --bg-color: #ece7e1;
+    --nav-bg: white;
     --font-color: black;
     --primary-color: #AB856E;
     --primary-opaque: hsla(23, 27%, 55%, 0.575);
@@ -26,6 +27,9 @@
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background: var(--bg-color);
     color: var(--font-color);
+    nav{
+        background: var(--nav-bg);
+    }
     // min-height: 100vh;
     // min-width: var(--min-width);
     // max-width: var(--max-width);
