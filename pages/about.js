@@ -10,27 +10,30 @@ const StyledAbout = styled(page)`
     .about-wrapper {
         display: flex;
         flex-wrap: wrap;
-        /* height: 80vh; */
+        min-height: calc(90vh -1rem);
+        width: 100vw;
+        max-width: var(--max-width);
         margin: 1rem auto;
 
         article {
             min-width: 300px;
             width: 100vw;
-            height: 30vh;
-            min-height: 400px;
+            min-height: 30vh;
+
             background: white;
             margin: 2.5rem 0;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             .about-image {
-                min-width: 250px;
-                margin: 0 auto;
-                padding: 0;
-                /* width: 25vw; */
+                margin: 0 2rem;
+
                 img {
-                    object-fit: contain;
-                    height: 30vh;
-                    min-height: 400px;
+                    object-fit: cover;
+                    height: 75vh;
+                    width: 90vw;
+                    min-height: 300px;
+                    min-width: 300px;
                 }
                 /* background: grey; */
             }
@@ -38,11 +41,12 @@ const StyledAbout = styled(page)`
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
-                width: 50vw;
+                width: 90vw;
                 min-height: 400px;
                 min-width: 300px;
-                margin: 0 auto;
-                background: pink;
+                height: auto;
+                margin: 0 2rem;
+                background: var(--primary-opaque);
                 h2 {
                     text-align: center;
                     /* font-size: 2rem; */
@@ -57,12 +61,20 @@ const StyledAbout = styled(page)`
         }
     }
     @media only screen and (min-width: 600px) {
-        .about-image {
-            margin: 2.5rem;
-            width: 30vw;
-        }
         article {
-            /* min-width: 500px; */
+            flex-direction: row;
+            .about-content {
+                width: 65vw;
+            }
+            .about-image {
+                margin: 2.5rem;
+                width: 30vw;
+                img {
+                    object-fit: cover;
+                    height: 50vh;
+                    width: 35vw;
+                }
+            }
         }
     }
 `;
@@ -81,7 +93,7 @@ export default function about() {
                 <div className="about-wrapper">
                     <article>
                         <div className="about-image">
-                            <Image src="/salon1.jpg" alt="Salon room" width={500} height={400} loading="lazy" />
+                            <img src="/salon1.jpg" alt="Salon room" loading="lazy" />
                         </div>
                         <div className="about-content">
                             <h2>当サロンについて</h2>
@@ -95,6 +107,9 @@ export default function about() {
                         </div>
                     </article>
                     <article>
+                        <div className="about-image">
+                            <img src="/salon1.jpg" alt="Salon room" loading="lazy" />
+                        </div>
                         <div className="about-content">
                             <h2>セラピストについて</h2>
                             <p>
@@ -111,9 +126,6 @@ export default function about() {
                                 だからこそあなたに同じ思いをしてほしくない。
                                 <br /> 身体の声を聴いて、やわらげて、楽を手に入れる。 私にそのお手伝いをさせてください。
                             </p>
-                        </div>
-                        <div className="about-image">
-                            <Image src="/salon1.jpg" alt="Salon room" width={500} height={500} loading="lazy" />
                         </div>
                     </article>
                 </div>

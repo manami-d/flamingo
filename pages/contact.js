@@ -8,7 +8,6 @@ import styled from 'styled-components';
 
 const StyledContact = styled(page)`
     .contact-form {
-        /* height: 750px; */
         margin: 2.5rem auto;
         fieldset {
             margin: 0 auto;
@@ -23,17 +22,17 @@ const StyledContact = styled(page)`
 
             border: none;
             legend {
+                text-align: center;
                 h1 {
                     font-size: 1.8rem;
                     letter-spacing: 2px;
                 }
-                /* margin-bottom: 2rem; */
             }
             .label-wrapper {
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
-                margin: 2rem auto;
+
                 min-width: 275px;
                 &:focus-within {
                     #form-message,
@@ -47,9 +46,9 @@ const StyledContact = styled(page)`
                 display: block;
                 min-width: 75px;
                 max-width: 125px;
-                margin-right: 1rem;
+                margin-right: auto;
+                margin-bottom: 5px;
                 text-align: left;
-                /* margin-right: auto; */
             }
             input {
                 padding: 0 7px;
@@ -63,9 +62,9 @@ const StyledContact = styled(page)`
             #form-message,
             input {
                 /* border-width: 2px; */
-                min-width: 240px;
+                min-width: 340px;
                 max-width: 400px;
-                margin: 0 auto;
+                margin: 0 0 0 auto;
                 border: none;
                 border-radius: 7px;
                 box-shadow: 2px 2px 4px #b3afaf, -2px -2px 4px #b3afaf;
@@ -120,7 +119,7 @@ export default function contact() {
                 <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet" />
             </Head>
             <StyledContact>
-                <form class="contact-form" onSubmit={(e) => handleSubmit(e)}>
+                <form className="contact-form" onSubmit={(e) => handleSubmit(e)}>
                     <fieldset>
                         <legend>
                             <h1>Contact Me</h1>
