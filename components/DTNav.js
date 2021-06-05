@@ -68,8 +68,7 @@ export default function Navbar() {
                 </li>
                 <li>
                     {' '}
-                    {/* <a href="https://www.instagram.com/flamingo.seitai.misa/?igshid=fb5c688pdmxe"> */}
-                    <a href="#">
+                    <a href="https://www.instagram.com/flamingo.seitai.misa/?igshid=fb5c688pdmxe" target="_blank">
                         Instagram
                         <AiOutlineInstagram id="insta-icon" />
                     </a>

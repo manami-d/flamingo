@@ -12,7 +12,8 @@ const StyledIndex = styled(page)`
     .hero {
         height: 45vh;
         width: 100%;
-        background: rgba(197, 197, 197, 0.774);
+        background-position: center;
+        background-repeat: no-repeat;
         background-image: url('/topimage.jpg');
         display: flex;
         justify-content: center;
@@ -21,11 +22,14 @@ const StyledIndex = styled(page)`
             display: flex;
             flex-direction: column;
             max-width: 400px;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.4);
             padding: 1.5rem;
             p,
             h1 {
                 text-align: center;
+            }
+            h1 + p {
+                font-size: 0.8em;
             }
         }
     }

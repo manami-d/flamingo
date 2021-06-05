@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledCard = styled.article`
-    height: 25vh;
+    height: 20vh;
     max-height: 550px;
     min-height: 200px;
     min-width: 280px;
+    max-width: 300px;
     width: 80vw;
     max-width: 600px;
     margin: 1rem auto;
@@ -23,14 +24,16 @@ const StyledCard = styled.article`
         margin: 1rem auto;
         text-align: center;
         line-height: 2.4rem;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     @media only screen and (min-width: 880px) {
-        max-width: 280px;
+        width: 30%;
+        min-width: 280px;
+        max-width: 320px;
         margin: 1rem auto;
     }
     @media only screen and (min-width: 1000px) {
-        max-width: 330px;
+        max-width: 350px;
         margin: 1rem auto;
     }
 `;
