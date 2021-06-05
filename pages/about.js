@@ -80,7 +80,7 @@ const StyledAbout = styled(page)`
             align-items: center;
             .about-content {
                 position: absolute;
-                bottom: 3.5rem;
+                bottom: 6.5rem;
                 /* right: 0; */
                 width: 90vw !important;
                 max-width: 800px;
