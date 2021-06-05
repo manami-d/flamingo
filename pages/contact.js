@@ -13,9 +13,9 @@ const StyledContact = styled(page)`
             margin: 0 auto;
             min-height: 400px;
             height: 75vh;
-            max-width: 500px;
+            max-width: 600px;
             min-width: 280px;
-            width: 50vw;
+            width: 80vw;
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
@@ -44,16 +44,17 @@ const StyledContact = styled(page)`
 
             label {
                 display: block;
-                min-width: 75px;
-                max-width: 125px;
-                margin-right: auto;
+                width: 150px;
+                margin-left: auto;
+                margin-right: 2rem;
                 margin-bottom: 5px;
                 text-align: left;
+                min-width: 280px;
+                max-width: 400px;
             }
             input {
                 padding: 0 7px;
                 height: 2rem;
-                margin: 0 auto;
             }
             #form-message {
                 padding: 13px;
@@ -62,13 +63,20 @@ const StyledContact = styled(page)`
             #form-message,
             input {
                 /* border-width: 2px; */
-                min-width: 340px;
+                min-width: 280px;
                 max-width: 400px;
-                margin: 0 0 0 auto;
+                margin: 0 2rem 0 auto;
                 border: none;
                 border-radius: 7px;
                 box-shadow: 2px 2px 4px #b3afaf, -2px -2px 4px #b3afaf;
             }
+        }
+    }
+    @media only screen and (min-width: 600px) {
+        label {
+            min-width: initial !important;
+            max-width: 150px !important;
+            margin: 0 auto !important;
         }
     }
 `;

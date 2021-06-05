@@ -15,7 +15,7 @@ const StyledButton = styled.button`
     justify-content: center;
     align-items: center;
     color: #ffffff;
-    border: 3px solid var(--button-border);
+    border: 2px solid var(--button-border);
     a {
         display: block;
         padding: auto;

@@ -15,7 +15,7 @@ const StyledFooter = styled.footer`
 export default function Footer() {
     return (
         <StyledFooter>
-            <p>Copyright Flamingo.co &copy; 2021</p>
+            <p id="footer">Copyright Flamingo.co &copy; 2021</p>
         </StyledFooter>
     );
 }

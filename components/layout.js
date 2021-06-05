@@ -13,6 +13,7 @@ const StyledlayoutDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background: white;
 `;
 
 export default function Layout({ children }) {

@@ -6,6 +6,7 @@ export const page = styled.section`
     width: 100vw;
     min-width: var(--min-width);
     max-width: var(--max-width);
+
     p {
         line-height: 1.4rem;
     }

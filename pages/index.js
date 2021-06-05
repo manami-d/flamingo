@@ -22,8 +22,9 @@ const StyledIndex = styled(page)`
             display: flex;
             flex-direction: column;
             max-width: 400px;
-            background: rgba(255, 255, 255, 0.4);
+            background: rgb(14 4 4 / 28%);
             padding: 1.5rem;
+            color: #dedede;
             p,
             h1 {
                 text-align: center;
@@ -34,7 +35,7 @@ const StyledIndex = styled(page)`
         }
     }
     .card-wrapper {
-        margin: 5rem auto;
+        margin: 2.5rem auto;
 
         display: flex;
         justify-content: space-around;
@@ -67,8 +68,6 @@ const StyledIndex = styled(page)`
                 display: none;
                 height: 100%;
                 width: 100%;
-                background: red;
-
                 object-fit: cover;
                 img {
                     height: 100%;
@@ -164,7 +163,7 @@ export default function index() {
                                 <img src="/footbath.jpg" alt="#" />
                             </div>
                             <div className="card-content">
-                                <p>メニューはこちらからご覧いただけます。</p>
+                                <p>メニューはこちらからご覧いただけます</p>
 
                                 <a className="button-link" href="/flamingo-menu.pdf" download>
                                     <Button>Menu</Button>

@@ -10,20 +10,12 @@ const StyledNav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 3px 0 var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
     margin-bottom: 1rem;
     .logo {
-        width: 9.3rem;
-        height: 60%;
-        /* margin-left: 3rem; */
+        height: 55px;
         margin: auto 0 auto 3rem;
-        // just until we have a logo to display
-        color: white;
-        /* background: grey; */
-        background-image: url('/brown-swatch50px.png');
         text-align: center;
-        font-size: 1.5rem;
-        line-height: 4vh;
     }
     ul {
         width: 70vw;
@@ -40,7 +32,8 @@ const StyledNav = styled.nav`
 export default function Navbar() {
     return (
         <StyledNav>
-            <i className="logo cursive">flamingo</i>
+            <img src="/flamingo-logo60px.png" className="logo" />
+
             <ul>
                 <li>
                     {' '}

@@ -32,13 +32,14 @@ const StyledCard = styled.article`
     }
     @media only screen and (min-width: 880px) {
         height: 30vh;
+        max-height: 600px;
         width: 30%;
         min-width: 280px;
         max-width: 320px;
         margin: 1rem auto;
     }
     @media only screen and (min-width: 1000px) {
-        max-width: 350px;
+        max-width: 400px;
         margin: 1rem auto;
     }
 `;
