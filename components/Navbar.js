@@ -88,13 +88,11 @@ export default function Navbar() {
                 </li>
                 <div ref={navList} className="closed">
                     <li>
-                        {' '}
                         <Link href="/">
                             <a>Home</a>
                         </Link>
                     </li>
                     <li>
-                        {' '}
                         <Link href="/about">
                             <a>About</a>
                         </Link>
@@ -105,7 +103,6 @@ export default function Navbar() {
                         </a>
                     </li>
                     <li>
-                        {' '}
                         <Link href="/contact">
                             <a>Contact</a>
                         </Link>
@@ -114,7 +111,7 @@ export default function Navbar() {
                         {' '}
                         <a href="https://www.instagram.com/flamingo.seitai.misa/?igshid=fb5c688pdmxe" target="_blank">
                             Instagram
-                            <AiOutlineInstagram id="insta-icon" />
+                            <AiOutlineInstagram id="insta-icon" alt="link to Flamingo Seitai's Instagram account" />
                         </a>
                     </li>
                 </div>
