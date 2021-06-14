@@ -4,16 +4,14 @@ import styled from 'styled-components';
 const StyledCard = styled.article`
     overflow: hidden;
     height: 30vh;
-    max-height: 550px;
+    max-height: 350px;
     min-height: 200px;
     min-width: 280px;
-    max-width: 300px;
-    width: 80vw;
-    max-width: 600px;
+    width: 100%;
+    max-width: 80vw;
     margin: 1rem auto;
-    background: rgba(255, 255, 255, 0.6);
-    box-shadow: 3px 3px 6px #d3d3d3, -3px -3px 6px #ededed;
-
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -27,12 +25,18 @@ const StyledCard = styled.article`
         line-height: 1.8rem;
         font-size: 1rem;
     }
-    @media only screen and (min-width: 400px) {
+    @media only screen and (min-width: 450px) {
         height: 25vh;
+        width: 600px;
+    }
+    @media only screen and (min-width: 650px) {
+        /* width: 600px; */
+        /* max-width: 80vw; */
+        margin: 1rem 20%;
     }
     @media only screen and (min-width: 880px) {
         height: 30vh;
-        max-height: 600px;
+
         width: 30%;
         min-width: 280px;
         max-width: 320px;

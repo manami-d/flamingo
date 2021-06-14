@@ -10,21 +10,30 @@ import Link from 'next/link';
 
 const StyledIndex = styled(page)`
     .hero {
-        height: 45vh;
+        height: 50vh;
         width: 100%;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('/topimage.jpg');
         display: flex;
         justify-content: center;
         align-items: center;
+        img {
+            object-fit: cover;
+            height: 50vh;
+            min-width: 300px;
+            max-width: 800px;
+            position: relative;
+        }
+
         .hero-content {
+            position: absolute;
             display: flex;
             flex-direction: column;
             max-width: 400px;
-            background: rgb(14 4 4 / 28%);
+            background: var(--primary-opaque);
             padding: 1.5rem;
-            color: #dedede;
+            z-index: 3;
+
             p,
             h1 {
                 text-align: center;
@@ -32,6 +41,16 @@ const StyledIndex = styled(page)`
             h1 + p {
                 font-size: 0.8em;
             }
+            /* &:after {
+                content: '';
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                z-index: 99;
+                left: 0;
+                top: 0;
+                background: black;
+            } */
         }
     }
     .card-wrapper {
@@ -49,30 +68,13 @@ const StyledIndex = styled(page)`
             color: white;
             width: 100%;
             height: 100%;
-            &:after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgb(0 0 0 / 50%);
-                /* z-index: 5; */
-            }
+
             p,
             button,
             .button-link {
                 z-index: 5;
             }
-            &:hover {
-                color: black;
-                &:after {
-                    background: none;
-                }
-                p {
-                    background: rgba(116, 112, 112, 0.45);
-                }
-            }
+
             .card-content {
                 display: flex;
                 flex-direction: column;
@@ -82,7 +84,12 @@ const StyledIndex = styled(page)`
                 background-position: left center;
                 background-repeat: no-repeat;
                 p {
-                    width: 90%;
+                    width: 100%;
+                    height: 4.5rem;
+                    margin: 0;
+                    padding-top: 1rem;
+                    background: #f3dabf;
+                    color: var(--font-color);
                 }
                 .button-link {
                     display: block;
@@ -131,6 +138,9 @@ const StyledIndex = styled(page)`
                 }
                 .card-content {
                     background: white;
+                    p {
+                        background: white;
+                    }
                 }
 
                 #card1,
@@ -144,20 +154,80 @@ const StyledIndex = styled(page)`
             }
         }
     }
+
     @media only screen and (min-width: 880px) {
-        .card-wrapper {
-            .inner-wrapper {
+        .hero {
+            z-index: 1;
+            /* max-width: var(--max-width); */
+            height: calc(100vh - 70px);
+            top: 70px;
+            overflow: hidden;
+            .hero-content {
+                top: 20%;
+                right: 10%;
+                max-width: initial;
+                width: 40vw;
+                font-size: 1.3rem;
+                h1 {
+                    font-size: 4rem;
+                }
+            }
+            img {
+                all: initial !important;
                 position: relative;
-                color: white;
-                &:after {
-                    content: '';
+                top: 70px;
+                object-fit: cover;
+                max-width: var(--max-width);
+                min-height: calc(100vh - 70px);
+                z-index: 1;
+                top: 0;
+            }
+        }
+        .card-wrapper {
+            z-index: 3;
+            width: 50vw;
+            max-width: calc(var(--max-width) / 2);
+            min-width: 400px;
+            position: absolute;
+            height: 90vh;
+            top: 5vh;
+            left: 0;
+
+            article {
+                z-index: 3;
+                min-width: 350px;
+                margin: 1rem 10vw;
+                height: 25vh;
+            }
+            .inner-wrapper {
+                z-index: 3;
+                position: relative;
+                & > * {
+                    border: none !important;
+                }
+                .card-image {
                     position: absolute;
-                    top: 0;
-                    left: 0;
                     width: 100%;
-                    height: 100%;
-                    background: rgb(0 0 0 / 50%);
-                    /* z-index: 5; */
+                    height: 16vh;
+                    top: 25%;
+                    left: 0;
+                    z-index: 3;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .card-content {
+                    position: absolute;
+                    height: 12vh;
+                    z-index: 4;
+                    background: none;
+                    p {
+                        background: white;
+                        width: 100%;
+                        margin-bottom: 2rem;
+                    }
                 }
                 p,
                 button,
@@ -173,26 +243,38 @@ const StyledIndex = styled(page)`
                         background: rgba(116, 112, 112, 0.45);
                     }
                 }
-                .card-content {
-                    /* background: none !important; */
-                }
-                #card1 {
-                    background-image: url('/lady2.jpg') !important;
-                }
-                #card2 {
-                    background-image: url('/footbath.jpg') !important;
-                }
-                #card3 {
-                    background-image: url('/salon3.jpg') !important;
-                }
-            }
-            .card-image {
-                display: none !important;
             }
         }
     }
     @media only screen and (min-width: 1000px) {
+        position: relative;
+        .hero {
+            display: flex;
+            justify-content: center;
+            .hero-content {
+                right: initial !important;
+            }
+        }
         .card-wrapper {
+            position: absolute;
+            min-width: 1000px;
+            width: 100%;
+            max-width: var(--max-width);
+            height: 400px;
+            top: 50vh;
+            left: 0;
+
+            article {
+                margin: 0 auto !important;
+                min-width: 300px !important;
+                height: 100%;
+                position: relative;
+                img {
+                    height: 225px !important;
+                    position: absolute;
+                    /* top: 40%; */
+                }
+            }
             .inner-wrapper {
                 color: black;
                 &:after {
@@ -208,6 +290,9 @@ const StyledIndex = styled(page)`
                 }
                 .card-content {
                     background: white;
+                    p {
+                        margin-bottom: 0;
+                    }
                 }
 
                 #card1,
@@ -237,6 +322,7 @@ export default function index() {
                 {/* this is how an image is done <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} /> */}
 
                 <div className="hero">
+                    <img src="/stones-on-beach-L.png" alt="calming picture of stones on beach" />
                     <div className="hero-content">
                         <p>整体　筋膜リリース</p>
                         <h1 className="cursive">flamingo</h1>

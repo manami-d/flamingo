@@ -6,18 +6,44 @@
 :root {
     --bg-color: white;
     --nav-bg: white;
-    --font-color: black;
+    --font-color: #1B0404;
+    --link-color: #1B0404;
     --primary-color: #AB856E;
-    --primary-opaque: hsla(23, 27%, 55%, 0.575);
+    --primary-opaque: rgba(171, 133, 110, 0.4);
     --secondary-color: #facb8b;
-    --button: #50B1A9;
-    --button-border:#49c0b4;
-    // --button: #fcd8d0;
-    // --button-border:hsla(23, 27%, 55%, 0.575);
+    --notification-bg:#3a40d6;
+    --notification-border:  #2E34EA ;
+    --warning-bg: #ec9292 ;
+    --warning-border: #f36e6e;
+    --button-border: #cba8a2;
+    --button-bg: white;
+    --button-bg-hover: #cba8a2;
+    --button-border-hover:var(--font-color);
+    --card-bg: white;
+    --card-border: #cba8a2;
     --outline: orange;
     --max-width: 1480px;
     --min-width: 300px;
-    font-family: 'Hachi Maru Pop', cursive;
+    // font-family: 'Hachi Maru Pop', cursive;
+    font-family: 'Noto Sans JP', sans-serif;
+
+
+    /* contrast check 1
+    color 1 fffaf4
+    color 2 601416 - PASS
+    mauve : #9d6d69 - FAIL
+    color 4 cba8a2 with text #311C1C
+    color 5 b9928d with text #1B0404
+
+    contrast check 2
+    color 1 d4a659 
+    color 2 c77a44
+    color 3 fcf6f6
+    color 4 e5c2a2
+    color 5 e5d9db
+    */
+
+
 
     // @media (prefers-color-scheme: dark) {
     //   --bg-color: black;
@@ -86,17 +112,17 @@ body  {
 }
 
 a {
-    color: var(--font-color);
+    color: var(--link-color);
     text-decoration: none;
     &:visited {
-        color: var(--font-color);
+        color: var(--link-color);
     }
     &:hover {
         cursor: pointer;
-        color: var(--font-color);
+        color: var(--link-color);
     }
     &:active {
-        color: var(--font-color);
+        color: var(--link-color);
     }
 }
 

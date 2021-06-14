@@ -12,7 +12,8 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
     border-bottom: 3px solid var(--primary-color);
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
+    z-index: 5;
     .logo {
         height: 55px;
         margin: auto 0 auto 3rem;

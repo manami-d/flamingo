@@ -45,13 +45,10 @@ const StyledContact = styled(page)`
 
             label {
                 display: block;
-                width: 150px;
-                margin-left: auto;
-                margin-right: 2rem;
-                margin-bottom: 5px;
+                margin: 0 auto 0 0;
+                margin-bottom: 10px !important;
                 text-align: left;
-                min-width: 280px;
-                max-width: 400px;
+                width: 200px;
             }
             input {
                 padding: 0 7px;
@@ -74,24 +71,23 @@ const StyledContact = styled(page)`
         .contact-notification.success,
         .contact-notification.error {
             position: fixed;
-            left: clamp(2vw, 4.5vw, 500px);
+            left: clamp(5vw, 5%, 20vw);
             top: 6vh;
             display: flex;
-            width: clamp(280px, 90vw, 600px);
+            width: clamp(280px, 80vw, 800px) !important;
             height: auto;
             z-index: 5;
             padding: 5px;
-            p{
+            p {
                 text-align: center;
-                margin: 0 auto
-
+                margin: 0 auto;
             }
             .message-close {
                 position: absolute;
                 top: -10px;
                 right: -10px;
-                border: 2px solid white;
-                background: var(--button);
+                border-width: 2px;
+                border-style: solid;
                 fill: white;
                 border-radius: 50%;
                 height: 1.5rem;
@@ -101,33 +97,81 @@ const StyledContact = styled(page)`
                 }
             }
         }
+        .contact-notification {
+            border-width: 2px;
+            border-style: solid;
+        }
         .contact-notification.success {
-            border: 2px solid var(--button-border);
-            background: var(--button);
             color: white;
+            border-color: var(--notification-border);
+            background: var(--notification-bg);
+            .message-close {
+                border-color: var(--notification-border);
+                background: var(--notification-bg);
+            }
         }
         .contact-notification.error {
+            color: white;
+            border-color: var(--warning-border);
+            background: var(--warning-bg);
             height: 5rem;
-            border: 2px solid var(--button-border);
+
+            .message-close {
+                background: #f3a3a3;
+                border-color: var(--warning-border);
+            }
         }
     }
 
     @media only screen and (min-width: 400px) {
         .contact-notification.success,
         .contact-notification.error {
-            left: 5vw !important;
+            left: clamp(5vw, 10%, 20vw) !important;
+        }
+        label {
+            margin: 0 auto 10px 0 !important;
+        }
+        label,
+        input,
+        #form-message {
+            margin: 0 auto !important;
         }
     }
 
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 770px) {
         .contact-notification.success,
         .contact-notification.error {
-            left: 7vw !important;
+            left: clamp(5vw, 15%, 20vw) !important;
         }
         label {
-            min-width: initial !important;
-            max-width: 150px !important;
+            max-width: 150px;
             margin: 0 auto !important;
+        }
+    }
+    @media only screen and (min-width: 900px) {
+        .contact-notification.success,
+        .contact-notification.error {
+            left: clamp(8vw, 10%, 25vw) !important;
+        }
+    }
+
+    @media only screen and (min-width: 1100px) {
+        .contact-notification.success,
+        .contact-notification.error {
+            left: clamp(8vw, 25%, 35vw) !important;
+            width: 40% !important;
+        }
+    }
+    @media only screen and (min-width: 1250px) {
+        .contact-notification.success,
+        .contact-notification.error {
+            left: clamp(8vw, 30%, 40vw) !important;
+        }
+    }
+    @media only screen and (min-width: 1500px) {
+        .contact-notification.success,
+        .contact-notification.error {
+            left: clamp(25%, 30%, 50vw) !important;
         }
     }
 `;
@@ -137,23 +181,21 @@ export default function contact() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [submitted, setSubmitted] = useState(true);
-    const [notification, setNotification] = useState(true);
+    const [notification, setNotification] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         let data = {
-            name,
-            email,
-            message
+            name: name,
+            email: email,
+            message: message,
+            subject: 'email from Seitai Website'
         };
 
-        fetch('/api/contact', {
+        fetch('/api/send-email', {
             method: 'POST',
-            headers: {
-                Accept: 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         }).then((res) => {
             console.log('Response received', res);
@@ -167,6 +209,12 @@ export default function contact() {
                 console.log('Response failed!');
                 setSubmitted(false);
             }
+            setNotification(true);
+            console.log('notification here');
+            setTimeout(() => {
+                setNotification(false);
+                console.log('notification gone');
+            }, 5000);
         });
 
         console.log('formValues: ', name, email, message);
@@ -210,6 +258,7 @@ export default function contact() {
                                     setName(e.target.value);
                                 }}
                                 value={name}
+                                placeholder="name"
                             />
                         </div>
                         <div className="label-wrapper">
@@ -224,6 +273,7 @@ export default function contact() {
                                     setEmail(e.target.value);
                                 }}
                                 value={email}
+                                placeholder="email"
                             />
                         </div>
                         <div className="label-wrapper">

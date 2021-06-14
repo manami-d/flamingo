@@ -8,16 +8,16 @@ const StyledButton = styled.button`
     height: 50px;
     font-size: 1rem;
     border-radius: 7px;
-    background: var(--button);
+    background: var(--button-bg);
     border: none;
     display: flex;
     margin: 0 auto;
     padding: 0 15px;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
+    color: var(--font-color);
     border: 2px solid var(--button-border);
-    font-family: 'Hachi Maru Pop', cursive;
+    /* font-family: 'Hachi Maru Pop', cursive; */
     a {
         display: block;
         padding: auto;
@@ -25,8 +25,8 @@ const StyledButton = styled.button`
     }
     &:hover,
     &:focus {
-        color: #50b1a9;
-        background: #ffffff;
+        background: var(--button-bg-hover);
+        border-color: var(--primary-opaque);
     }
 `;
 

@@ -57,6 +57,7 @@ const StyledNav = styled.nav`
             background: white;
             padding: 5px;
             box-shadow: 2px 2px 0 #9c9c9c;
+            z-index: 10;
         }
         @keyframes menu {
             from {
